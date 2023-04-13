@@ -1,0 +1,20 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  box-shadow: rgba(50, 50, 93, 0.11) 0px 4px 6px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+}
+
+.primaryButton {
+  color: var(--color-white);
+  background: var(--color-dark-blue);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+}

@@ -1,12 +1,22 @@
 @import "@/styles/variables.scss";
 
-.gnav {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 64px;
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  padding: 1rem;
+  background: var(--color-white);
+  box-shadow: rgba(28, 3, 3, 0.08) 0px 2px 12px 0px;
 }
 
+.gnav {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+// ドロワーメニュー
 .hamburgerMenu {
   display: flex;
   position: absolute;
@@ -47,7 +57,7 @@
 }
 
 .drawerMenu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -100%;
   width: 100%;
@@ -74,4 +84,54 @@
 
 .drawerMenu li {
   margin-bottom: 10px;
+}
+
+// PCメニュー
+
+.gnavList {
+  display: none;
+
+  @include mq(md) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    list-style-type: none;
+  }
+}
+
+.gnavItem {
+  display: flex;
+  position: relative;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  transition: all 0.3s ease-in-out;
+}
+
+.gnavItem::after {
+  visibility: hidden;
+  opacity: 0;
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-dark-blue);
+}
+
+.gnavItem:not(:last-child):hover::after {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.4s ease;
+}
+
+.contactButton {
+  width: 100%;
+  max-width: 84px;
+}
+
+.contactButton button {
+  font-size: 13px;
+  font-weight: 800;
 }

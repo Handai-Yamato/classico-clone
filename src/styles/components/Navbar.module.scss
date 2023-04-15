@@ -4,6 +4,7 @@
   display: flex;
   position: sticky;
   top: 0;
+  z-index: 999;
   align-items: center;
   padding: 1rem;
   background: var(--color-white);
@@ -127,11 +128,19 @@
 }
 
 .contactButton {
-  width: 100%;
-  max-width: 84px;
+  width: 84px;
 }
 
 .contactButton button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  box-shadow: rgba(50, 50, 93, 0.11) 0px 4px 6px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
   font-size: 13px;
   font-weight: 800;
+  color: var(--color-white);
+  background: var(--color-dark-blue);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
 }

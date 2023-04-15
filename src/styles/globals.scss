@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap");
 @import "@/styles/variables.scss";
 
 :root {
@@ -9,7 +10,10 @@
   --color-dark-blue: rgb(11, 29, 62);
   --color-light-blue: rgb(6, 93, 147);
 
-  --box-shadow-primary: box-shadow: rgba(28, 3, 3, 0.13) 0px 2px;
+  --box-shadow-primary: rgba(28, 3, 3, 0.13) 0px 2px;
+
+  --font-primary: "Yu Gothic, Hiragino Kaku Gothic ProN, Meiryo, Arial,", sans-serif;
+  --font-secondary: "EB Garamond", serif;
 }
 
 * {
@@ -21,7 +25,8 @@
 html {
   height: 100%;
   max-width: 100vw;
-  font-family:'Yu Gothic, Hiragino Kaku Gothic ProN, Meiryo, Arial,',sans-serif;
+  line-height: 1.6;
+  font-family: var(--font-primary);
   overflow-x: hidden;
 }
 
@@ -29,14 +34,30 @@ body {
   background: var(--color-whitesmoke);
 }
 
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
 h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: var(--font-secondary);
+  line-height: 1.1;
   color: var(--color-dark-black);
+
+  & span {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-family: "Yu Gothic, Hiragino Kaku Gothic ProN, Meiryo, Arial,", sans-serif;
+    color: var(--color-dark-blue);
+  }
+}
+
+img {
+  max-width: 100%;
 }
 
 ::selection {

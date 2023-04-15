@@ -1,3 +1,60 @@
-.paragraph {
-  font-size: 24px;
+@import "@/styles/variables.scss";
+
+.heroImage {
+  position: relative !important;
+  height: 80vh !important;
+  width: 100% !important;
+  object-fit: cover;
+  object-position: center bottom;
+  margin-top: -0.8px;
+}
+
+.heroContents {
+  position: relative;
+  display: block;
+  z-index: 890;
+  width: 80%;
+  max-width: 800px;
+  margin-top: -120px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 2.5rem;
+  text-align: center;
+  background: var(--color-white);
+  box-shadow: rgba(28, 3, 3, 0.13) 0px 2px 12px 0px;
+}
+
+.heroLogo {
+  min-width: 70%;
+  object-fit: contain;
+  position: relative !important;
+  width: auto !important;
+}
+
+.heroText {
+  margin-top: 24px;
+  font-size: 14px;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+.heroText span {
+  display: inline-block;
+}
+
+.aboutButton {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+// Works section
+.sectionContainer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.sectionTitle {
+  text-align: center;
 }

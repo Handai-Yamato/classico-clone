@@ -11,7 +11,11 @@ const Button = ({ href, text, className }) => {
   );
 };
 
-export const PrimaryButton = ({ href, text, className }) => {
+export const PrimaryButtonSmall = ({ href, text, className }) => {
+  return <Button href={href} text={text} className={styles.primaryButtonSmall} />;
+};
+
+export const PrimaryButtonLarge = ({ href, text, className }) => {
   return <Button href={href} text={text} className={styles.primaryButton} />;
 };
 

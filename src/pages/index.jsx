@@ -58,6 +58,7 @@ export default function Home({ works, news }) {
                     src={work.thumbnail.url}
                     alt={work.title}
                     className={styles.worksThumbnail}
+                    fill
                   />
                 )}
                 <div className={styles.worksTextContainer}>

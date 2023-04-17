@@ -71,6 +71,9 @@
 .worksItem {
   box-shadow: var(--box-shadow-primary);
   transition: box-shadow 0.3s ease 0s; // 通常状態へ戻る時もトランジションを適用
+  @include mq(md) {
+    width: calc(50% - 1.5rem);
+  }
 }
 
 .worksItem:hover {
@@ -78,10 +81,10 @@
   transition: box-shadow 0.3s ease 0s;
 }
 
-.worksItem {
-  @include mq(md) {
-    width: calc(50% - 1.5rem);
-  }
+.worksThumbnail {
+  object-fit: contain;
+  position: relative !important;
+  width: auto !important;
 }
 
 .worksTextContainer {

@@ -54,7 +54,7 @@ export default function Home({ works, news }) {
             <li className={styles.worksItem} key={work.id}>
               <Link href={`/works/${work.id}`}>
                 {work.thumbnail && (
-                  <img
+                  <Image
                     src={work.thumbnail.url}
                     alt={work.title}
                     className={styles.worksThumbnail}
@@ -91,9 +91,9 @@ export default function Home({ works, news }) {
         <h2 className={styles.sectionTitle}>
           News<span>お知らせ</span>
         </h2>
-        <ul className={styles.newsList} key={news.id}>
+        <ul className={styles.newsList}>
           {news.slice(0, 4).map((article) => (
-            <li className={styles.newsItem}>
+            <li key={news.id} className={styles.newsItem}>
               <Link href={`/news/${article.id}`}>
                 <h3 className={styles.newsTitle}>{article.title}</h3>
               </Link>

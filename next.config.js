@@ -4,8 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["images.microcms-assets.io"],
-    loader: "imgix",
-    path: "",
+    unoptimized: true,
   },
 };
 

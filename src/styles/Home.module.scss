@@ -1,5 +1,10 @@
 @import "@/styles/variables.scss";
 
+.heroContainer {
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+}
+
 .heroImage {
   position: relative !important;
   height: 80vh !important;
@@ -50,11 +55,56 @@
 }
 
 // Works section
-.sectionContainer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.worksList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  @include mq(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
-.sectionTitle {
+.worksItem {
+  box-shadow: var(--box-shadow-primary);
+  transition: box-shadow 0.3s ease 0s; // 通常状態へ戻る時もトランジションを適用
+}
+
+.worksItem:hover {
+  box-shadow: rgba(28, 3, 3, 0.3) 0px 2px 20px 0px;
+  transition: box-shadow 0.3s ease 0s;
+}
+
+.worksItem {
+  @include mq(md) {
+    width: calc(50% - 1.5rem);
+  }
+}
+
+.worksTextContainer {
+  padding: 1rem;
+}
+
+.worksTitle {
+  height: 4rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.worksDescription {
+  height: 3rem;
+  margin-top: 0.5rem;
+}
+
+.worksDate {
+  margin-top: 0.5rem;
+  font-size: 10px;
+}
+
+.moreButton {
+  margin-top: 2rem;
   text-align: center;
 }

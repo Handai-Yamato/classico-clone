@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 // image
 import Image from "next/image";
-// component
-import { PrimaryButton } from "@/components/button";
 // styles
 import styles from "@/styles/components/Navbar.module.scss";
 
@@ -62,10 +60,7 @@ export default function Navbar() {
             <Link href="/access">アクセス</Link>
           </li>
           <li className={`${styles.gnavItem} ${styles.contactButton}`}>
-            {/* <PrimaryButton href="/contact" text="お問合せ" /> */}
-            <button>
-              <Link href="/contact">お問合せ</Link>
-            </button>
+            <Link href="/contact">お問合せ</Link>
           </li>
         </ul>
       </nav>

@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 import { ReactSVG } from "react-svg";
 import { client } from "../../../lib/client";
 // component
-import HomeIcon from "@/components/svg/HomeIcon.jsx";
+import HomeIcon from "@/components/svg/homeIcon.jsx";
 // styles
 import styles from "@/styles/works/Work.module.scss";
 import Link from "next/link";

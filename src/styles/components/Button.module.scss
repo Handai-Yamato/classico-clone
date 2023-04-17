@@ -17,7 +17,7 @@
   background: var(--color-dark-blue);
   border: none;
   cursor: pointer;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .primaryButtonSmall {
@@ -27,4 +27,18 @@
 .primaryButtonLarge {
   width: 100%;
   max-width: 480px;
+}
+
+.secondaryButton {
+  width: 100%;
+  max-width: 480px;
+  background-color: #fff;
+  border: 1px solid var(--color-dark-blue);
+  transition: all 0.5s ease 0s;
+}
+
+.secondaryButton:hover {
+  color: #fff;
+  background-color: var(--color-dark-blue);
+  transition: all 0.5s ease 0s;
 }

@@ -129,9 +129,6 @@
 
 .contactButton {
   width: 84px;
-}
-
-.contactButton button {
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
@@ -143,4 +140,8 @@
   border: none;
   cursor: pointer;
   transition: transform 0.4s ease-in-out;
+}
+
+.contactButton:hover {
+  transform: translateY(-2px);
 }

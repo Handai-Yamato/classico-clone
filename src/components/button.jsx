@@ -20,5 +20,5 @@ export const PrimaryButtonLarge = ({ href, text, className }) => {
 };
 
 export const SecondaryButton = ({ href, text }) => {
-  return <Button href={href} text={text} className={styles.SecondaryButton} />;
+  return <Button href={href} text={text} className={styles.secondaryButton} />;
 };

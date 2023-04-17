@@ -1,20 +1,35 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+// library
+import { client } from "../../lib/client";
 // styles
 import styles from "@/styles/Home.module.scss";
 // component
 import NestedLayout from "@/components/layout/nested-layout";
-import { PrimaryButtonSmall } from "@/components/button";
+import { PrimaryButtonSmall, SecondaryButton } from "@/components/button";
 // image
 import hero from "../../public/image_home_hero.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+// SSG
+export const getStaticProps = async () => {
+  const worksData = await client.get({ endpoint: "works" });
+  const newsData = await client.get({ endpoint: "news" });
+
+  return {
+    props: {
+      works: worksData.contents,
+      news: newsData.contents,
+    },
+  };
+};
+
+export default function Home({ works, news }) {
   return (
     <NestedLayout>
-      <div>
+      <div className={styles.heroContainer}>
         <Image src={hero} alt="メインビジュアル" className={styles.heroImage} />
       </div>
 
@@ -34,6 +49,42 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>
           Works<span>施工事例</span>
         </h2>
+        <ul className={styles.worksList}>
+          {works.slice(0, 4).map((work) => (
+            <li className={styles.worksItem} key={work.id}>
+              <Link href={`/works/${work.id}`}>
+                {work.thumbnail && (
+                  <Image
+                    src={work.thumbnail.url}
+                    alt={work.title}
+                    className={styles.worksThumbnail}
+                    fill
+                  />
+                )}
+                <div className={styles.worksTextContainer}>
+                  <h3 className={styles.worksTitle}>{work.title}</h3>
+                  <div
+                    className={styles.worksDescription}
+                    dangerouslySetInnerHTML={{ __html: `${work.description}` }}
+                  />
+                  <p className={styles.worksDate}>
+                    {new Date(work.publishedAt)
+                      .toLocaleDateString("ja-JP", {
+                        year: "numeric",
+                        month: "2-digit",
+                        day: "2-digit",
+                      })
+                      .replace(/\//g, ".")}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className={styles.moreButton}>
+          <SecondaryButton href="/works" text="もっとみる" />
+        </div>
       </section>
 
       {/* News section */}
@@ -41,6 +92,15 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>
           News<span>お知らせ</span>
         </h2>
+        <ul className={styles.newsList}>
+          {news.slice(0, 4).map((article) => (
+            <li key={news.id} className={styles.newsItem}>
+              <Link href={`/news/${article.id}`}>
+                <h3 className={styles.newsTitle}>{article.title}</h3>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Access section */}

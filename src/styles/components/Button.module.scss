@@ -5,9 +5,11 @@
   border-radius: 2rem;
   box-shadow: rgba(50, 50, 93, 0.11) 0px 4px 6px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
   font-size: 16px;
+  transition: transform 0.4s ease-in-out;
 }
 
 .button:hover {
+  background: rgb(19, 49, 105);
   transform: translateY(-2px);
 }
 
@@ -17,7 +19,7 @@
   background: var(--color-dark-blue);
   border: none;
   cursor: pointer;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.4s ease-in-out, background 0.4s ease-in-out;
 }
 
 .primaryButtonSmall {
@@ -34,11 +36,11 @@
   max-width: 480px;
   background-color: #fff;
   border: 1px solid var(--color-dark-blue);
-  transition: all 0.5s ease 0s;
+  transition: transform 0.4s ease-in-out, background 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
 .secondaryButton:hover {
   color: #fff;
   background-color: var(--color-dark-blue);
-  transition: all 0.5s ease 0s;
+  transition: transform 0.4s ease-in-out, background 0.4s ease-in-out, color 0.4s ease-in-out;
 }

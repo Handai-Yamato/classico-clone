@@ -6,8 +6,10 @@ import { client } from "../../../lib/client";
 // component
 import HomeIcon from "@/components/svg/homeIcon.jsx";
 // styles
-import styles from "@/styles/works/Work.module.scss";
+import styles from "@/styles/blog/Id.module.scss";
 import Link from "next/link";
+import BreadCrumbs from "@/components/breadCrumbs";
+import NestedLayout from "@/components/layout/nested-layout";
 
 // 事前に生成するためのパスを指定
 export const getStaticPaths = async () => {
@@ -52,75 +54,34 @@ export default function WorksId({ works }) {
   ];
 
   return (
-    <div className={styles.container}>
-      {/* パンくずリスト */}
-      <nav>
-        <ul className={styles.crumbsList}>
-          {crumbs.map((crumb, index) => {
-            if (index === crumbs.length - 1) {
-              return (
-                <li key={crumb.title} className={styles.crumbsItem}>
-                  <span>{crumb.title}</span>
-                </li>
-              );
-            } else {
-              return (
-                <li key={crumb.title} className={styles.crumbsItem}>
-                  <Link href={crumb.url}>{crumb.title}</Link>
-                  <span className={styles.crumbsSlash}>&#47;</span>
-                </li>
-              );
-            }
-          })}
-        </ul>
-      </nav>
-      <div className={styles.blogContainer}>
-        <NextSeo
-          title={`${works.title} | 株式会社クラシコ`}
-          description={works.description}
-          openGraph={{
-            title: works.title,
-            description: works.description,
-            images: [
-              {
-                url: works.images[0].url,
-                width: works.images[0].width,
-                height: works.images[0].height,
-                alt: works.images[0].alt,
-              },
-            ],
-          }}
-        />
+    <NestedLayout title={works.title} pageName={works.title}>
+      <div className={styles.container}>
+        <div className={styles.blogContainer}>
+          <NextSeo
+            description={works.description}
+            openGraph={{
+              title: works.title,
+              description: works.description,
+              images: [
+                {
+                  url: works.images[0].url,
+                  width: works.images[0].width,
+                  height: works.images[0].height,
+                  alt: works.images[0].alt,
+                },
+              ],
+            }}
+          />
 
-        <p className={styles.date}>{works.formattedDate}</p>
-        <h1 className={styles.title}>{works.title}</h1>
-        <div
-          className={styles.description}
-          dangerouslySetInnerHTML={{ __html: `${works.description}` }}
-        />
-        <div className={styles.images} dangerouslySetInnerHTML={{ __html: `${works.images}` }} />
+          <p className={styles.date}>{works.formattedDate}</p>
+          <h1 className={styles.title}>{works.title}</h1>
+          <div
+            className={styles.body}
+            dangerouslySetInnerHTML={{ __html: `${works.description}` }}
+          />
+          <div className={styles.images} dangerouslySetInnerHTML={{ __html: `${works.images}` }} />
+        </div>
       </div>
-      {/* パンくずリスト */}
-      <nav>
-        <ul className={styles.crumbsList}>
-          {crumbs.map((crumb, index) => {
-            if (index === crumbs.length - 1) {
-              return (
-                <li key={crumb.title} className={styles.crumbsItem}>
-                  <span>{crumb.title}</span>
-                </li>
-              );
-            } else {
-              return (
-                <li key={crumb.title} className={styles.crumbsItem}>
-                  <Link href={crumb.url}>{crumb.title}</Link>
-                  <span className={styles.crumbsSlash}>&#47;</span>
-                </li>
-              );
-            }
-          })}
-        </ul>
-      </nav>
-    </div>
+    </NestedLayout>
   );
 }

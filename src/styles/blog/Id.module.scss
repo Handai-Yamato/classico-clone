@@ -3,27 +3,12 @@
 $content-width: 1024px;
 
 .container {
-  padding-top: 2.5rem;
-}
-
-// パンくずリストのスタイル
-.crumbsList {
-  display: flex;
   width: 100%;
   max-width: $content-width;
   margin-right: auto;
   margin-left: auto;
-  gap: 16px;
-}
-
-.crumbsItem {
-  display: flex;
-  font-size: 12px;
-  color: var(--color-light-black);
-}
-
-.crumbsSlash {
-  margin-left: 16px;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 // microCMSコンテンツのスタイル
@@ -60,7 +45,7 @@ $content-width: 1024px;
   }
 }
 
-.description {
+.body {
   margin-top: 1.5rem;
   font-size: 14px;
   color: var(--color-light-black);

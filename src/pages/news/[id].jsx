@@ -1,5 +1,9 @@
 import React from "react";
 import { client } from "../../../lib/client";
+// component
+import NestedLayout from "@/components/layout/nested-layout";
+// styles
+import styles from "@/styles/blog/Id.module.scss";
 
 // 事前に生成するためのパスを指定
 export const getStaticPaths = async () => {
@@ -38,10 +42,14 @@ export const getStaticProps = async (context) => {
 
 export default function WorksId({ news }) {
   return (
-    <div>
-      <p>{news.formattedDate}</p>
-      <h1>{news.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: `${news.content}` }} />
-    </div>
+    <NestedLayout title="お知らせ" pageName={news.title}>
+      <div className={styles.container}>
+        <div className={styles.blogContainer}>
+          <p className={styles.date}>{news.formattedDate}</p>
+          <h1 className={styles.title}>{news.title}</h1>
+          <div className={styles.body} dangerouslySetInnerHTML={{ __html: `${news.content}` }} />
+        </div>
+      </div>
+    </NestedLayout>
   );
 }

@@ -1,7 +1,8 @@
 import Head from "next/head";
 import React from "react";
+import BreadCrumbs from "../breadCrumbs";
 
-export default function NestedLayout({ children, title }) {
+export default function NestedLayout({ children, title, pageName }) {
   const t = `${title} | 株式会社クラシコ`;
 
   return (
@@ -13,7 +14,9 @@ export default function NestedLayout({ children, title }) {
           <meta property="og:title" content={t} />
         </Head>
       )}
+      <BreadCrumbs pageName={pageName} />
       {children}
+      <BreadCrumbs pageName={pageName} />
     </>
   );
 }

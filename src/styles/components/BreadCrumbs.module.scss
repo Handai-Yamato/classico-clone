@@ -1,0 +1,24 @@
+@import "@/styles/variables.scss";
+
+$content-width: 1024px;
+
+.crumbsNav {
+  display: flex;
+  width: 100%;
+  max-width: $content-width;
+  margin-right: auto;
+  margin-left: auto;
+  gap: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.crumbsItem {
+  display: flex;
+  font-size: 12px;
+  color: var(--color-light-black);
+}
+
+.crumbsSlash {
+  font-size: 12px;
+}

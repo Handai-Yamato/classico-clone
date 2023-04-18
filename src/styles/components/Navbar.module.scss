@@ -139,9 +139,10 @@
   background: var(--color-dark-blue);
   border: none;
   cursor: pointer;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, background 0.4s ease-in-out;
 }
 
 .contactButton:hover {
+  background: rgb(19, 49, 105);
   transform: translateY(-2px);
 }

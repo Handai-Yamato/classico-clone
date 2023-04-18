@@ -1,7 +1,8 @@
+import NestedLayout from "@/components/layout/nested-layout";
 import React from "react";
 
 const renovate = () => {
-  return <div>renovate</div>;
+  return <NestedLayout>renovate</NestedLayout>;
 };
 
 export default renovate;

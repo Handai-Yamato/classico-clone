@@ -1,10 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { NextPage } from "next";
 // component
 import HomeIcon from "@/components/svg/homeIcon.jsx";
-
 // styles
 import styles from "@/styles/components/BreadCrumbs.module.scss";
 

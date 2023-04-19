@@ -3,7 +3,7 @@ import React from "react";
 // component
 import BreadCrumbs from "../breadCrumbs";
 // styles
-import styles from "@/styles/components/Layout/NestedLayout.module.scss";
+import styles from "@/styles/components/layout/NestedLayout.module.scss";
 
 export default function NestedLayout({ children, title, pageName }) {
   const t = `${title} | 株式会社クラシコ`;

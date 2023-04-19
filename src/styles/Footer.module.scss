@@ -4,11 +4,15 @@
   font-size: 14px;
   line-height: 1.7;
   color: #fff;
+  background: var(--color-dark-blue);
 }
 
 .footerContainer {
+  width: 100%;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 4rem 1rem;
-  background: var(--color-dark-blue);
 }
 
 .footerTitle {

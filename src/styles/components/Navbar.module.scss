@@ -6,15 +6,16 @@
   top: 0;
   z-index: 999;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
   padding: 1rem;
   background: var(--color-white);
   box-shadow: rgba(28, 3, 3, 0.08) 0px 2px 12px 0px;
+  overflow-x: hidden;
 }
 
 .gnav {
   display: inline-block;
-  position: relative;
-  width: 100%;
 }
 
 // ドロワーメニュー
@@ -72,23 +73,34 @@
   right: 0;
 }
 
-.drawerMenu ul {
-  list-style: none;
+.drawerList {
+  width: 100%;
   margin: 0;
-  padding: 20px;
+  padding: 6rem 2rem 4rem;
+  list-style: none;
   background-color: transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
-.drawerMenu li {
-  margin-bottom: 10px;
+.drawerItem {
+  padding: 1rem;
+  font-size: 16px;
+  font-weight: 800;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.drawerItem a {
+  display: block;
+  width: 100%;
+}
+
+.drawerButton {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
 }
 
 // PCメニュー
-
 .gnavList {
   display: none;
 

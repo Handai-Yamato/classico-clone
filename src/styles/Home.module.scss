@@ -1,17 +1,12 @@
 @import "@/styles/variables.scss";
 
-.heroContainer {
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
-}
-
 .heroImage {
   position: relative !important;
   height: 80vh !important;
   width: 100% !important;
+  margin-top: -1px;
   object-fit: cover;
   object-position: center bottom;
-  margin-top: -0.8px;
 }
 
 .heroContents {
@@ -27,13 +22,6 @@
   text-align: center;
   background: var(--color-white);
   box-shadow: rgba(28, 3, 3, 0.13) 0px 2px 12px 0px;
-}
-
-.heroLogo {
-  min-width: 70%;
-  object-fit: contain;
-  position: relative !important;
-  width: auto !important;
 }
 
 .heroText {
@@ -87,9 +75,8 @@
 }
 
 .worksThumbnail {
-  object-fit: contain;
-  position: relative !important;
-  width: auto !important;
+  width: 100%;
+  height: auto;
 }
 
 .worksTextContainer {
@@ -113,8 +100,6 @@
 }
 // News section
 .newsSection {
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
   background: var(--color-gray);
 }
 
@@ -175,8 +160,6 @@
 
 // Info section
 .infoSection {
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
   background: var(--color-gray);
 }
 
@@ -206,7 +189,7 @@
   text-align: center;
   color: #fff;
   background: var(--color-dark-blue);
-  transition: transform 0.4s ease-in-out,background 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, background 0.4s ease-in-out;
 }
 
 .coInfo:hover,

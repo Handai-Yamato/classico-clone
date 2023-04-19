@@ -30,7 +30,14 @@ export default function Home({ works, news }) {
       </div>
 
       <div className={styles.heroContents}>
-        <Image src="/logo.svg" alt="Logo" className={styles.heroLogo} fill />
+        <Image
+          src="/logo.svg"
+          alt="Logo"
+          className={styles.heroLogo}
+          width={123}
+          height={27}
+          priority
+        />
         <p className={styles.heroText}>
           住みやすさと品質にこだわった<span>クラシコのリノベーションで</span>
           <br></br>快適な価値ある生活を
@@ -55,7 +62,8 @@ export default function Home({ works, news }) {
                       src={work.thumbnail.url}
                       alt={work.title}
                       className={styles.worksThumbnail}
-                      fill
+                      width={1280}
+                      height={960}
                     />
                   )}
                   <div className={styles.worksTextContainer}>
@@ -93,7 +101,7 @@ export default function Home({ works, news }) {
           </h2>
           <ul className={styles.newsList}>
             {news.slice(0, 4).map((article) => (
-              <li key={news.id} className={styles.newsItem}>
+              <li key={article.id} className={styles.newsItem}>
                 <span className={styles.newsDate}>
                   {new Date(article.publishedAt)
                     .toLocaleDateString("ja-JP", {
@@ -125,11 +133,11 @@ export default function Home({ works, news }) {
           <div className={styles.map}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3235.416062119655!2d139.79982764112077!3d35.814266322767224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60189108bf088199%3A0x8e87dcbd1f58701d!2z44Op44Kk44Kq44Oz44K644K_44Ov44O86LC35aGa!5e0!3m2!1sja!2sjp!4v1681796649453!5m2!1sja!2sjp"
-              allowfullscreen=""
               loading="lazy"
               width="100%"
               height={480}
-              referrerpolicy="no-referrer-when-downgrade"
+              allowFullScreen={true}
+              referrerPolicy="no-referrer"
             ></iframe>
           </div>
 

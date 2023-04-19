@@ -27,7 +27,6 @@ html {
   max-width: 100vw;
   line-height: 1.4;
   font-family: var(--font-primary);
-  overflow-x: hidden;
 }
 
 body {
@@ -58,13 +57,14 @@ h2 {
     display: block;
     margin-top: 8px;
     font-size: 13px;
-    font-family: "Yu Gothic, Hiragino Kaku Gothic ProN, Meiryo, Arial,", sans-serif;
+    font-family: var(--font-primary);
     color: var(--color-dark-blue);
   }
 }
 
 img {
   max-width: 100%;
+  margin: 0;
 }
 
 li {

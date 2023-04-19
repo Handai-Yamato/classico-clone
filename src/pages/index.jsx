@@ -26,7 +26,7 @@ export default function Home({ works, news }) {
   return (
     <>
       <div className={styles.heroContainer}>
-        <Image src={hero} alt="メインビジュアル" className={styles.heroImage} />
+        <Image src={hero} alt="メインビジュアル" className={styles.heroImage} priority />
       </div>
 
       <div className={styles.heroContents}>

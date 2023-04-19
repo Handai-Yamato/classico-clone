@@ -1,15 +1,9 @@
-import React from "react";
-import Image from "next/image";
-import { NextSeo } from "next-seo";
-import { ReactSVG } from "react-svg";
 import { client } from "../../../lib/client";
 // component
 import HomeIcon from "@/components/svg/homeIcon.jsx";
+import NestedLayout from "@/components/layout/nested-layout";
 // styles
 import styles from "@/styles/blog/Id.module.scss";
-import Link from "next/link";
-import BreadCrumbs from "@/components/breadCrumbs";
-import NestedLayout from "@/components/layout/nested-layout";
 
 // 事前に生成するためのパスを指定
 export const getStaticPaths = async () => {
@@ -57,22 +51,6 @@ export default function WorksId({ works }) {
     <NestedLayout title={works.title} pageName={works.title}>
       <div className={styles.container}>
         <div className={styles.blogContainer}>
-          <NextSeo
-            description={works.description}
-            openGraph={{
-              title: works.title,
-              description: works.description,
-              images: [
-                {
-                  url: works.images[0].url,
-                  width: works.images[0].width,
-                  height: works.images[0].height,
-                  alt: works.images[0].alt,
-                },
-              ],
-            }}
-          />
-
           <p className={styles.date}>{works.formattedDate}</p>
           <h1 className={styles.title}>{works.title}</h1>
           <div

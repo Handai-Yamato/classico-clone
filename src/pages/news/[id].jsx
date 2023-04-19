@@ -1,4 +1,3 @@
-import React from "react";
 import { client } from "../../../lib/client";
 // component
 import NestedLayout from "@/components/layout/nested-layout";

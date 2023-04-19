@@ -1,18 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 // library
 import { client } from "../../lib/client";
 // styles
 import styles from "@/styles/Home.module.scss";
 // component
-import NestedLayout from "@/components/layout/nested-layout";
-import { PrimaryButtonLarge, PrimaryButtonSmall, SecondaryButton } from "@/components/button";
+import { PrimaryButtonSmall, SecondaryButton } from "@/components/button";
 // image
 import hero from "../../public/image_home_hero.jpg";
-import BreadCrumbs from "@/components/breadCrumbs";
-
-const inter = Inter({ subsets: ["latin"] });
 
 // SSG
 export const getStaticProps = async () => {

@@ -34,6 +34,7 @@
 .secondaryButton {
   width: 100%;
   max-width: 480px;
+  color: var(--color-dark-blue);
   background-color: #fff;
   border: 1px solid var(--color-dark-blue);
   transition: transform 0.4s ease-in-out, background 0.4s ease-in-out, color 0.4s ease-in-out;

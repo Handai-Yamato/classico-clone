@@ -38,6 +38,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: inherit;
+}
+
 section {
   padding-top: 5rem;
   padding-bottom: 5rem;

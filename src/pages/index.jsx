@@ -86,10 +86,10 @@ export default function Home({ works, news }) {
               </li>
             ))}
           </ul>
-        </div>
 
-        <div className={styles.moreButton}>
-          <SecondaryButton href="/works" text="もっとみる" />
+          <div className={styles.moreButton}>
+            <SecondaryButton href="/works" text="もっとみる" />
+          </div>
         </div>
       </section>
 

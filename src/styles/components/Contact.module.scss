@@ -1,0 +1,42 @@
+@import "@/styles/variables.scss";
+
+.container {
+  padding: 5rem var(--content-padding);
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.text {
+  font-size: 13px;
+}
+
+.text span {
+  display: inline-block;
+}
+
+.button {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.tel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.tel a {
+  display: inline-block;
+  color: var(--color-dark-blue);
+  text-decoration: underline;
+  transition: text-decoration 0.4s ease 0s;
+
+  &:hover {
+    text-decoration: none;
+    transition: text-decoration 0.4s ease 0s;
+  }
+}

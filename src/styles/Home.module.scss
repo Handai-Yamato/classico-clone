@@ -105,9 +105,9 @@
 }
 
 .sectionContainer {
-  padding-right: 16px;
-  padding-left: 16px;
-  max-width: 1280px;
+  padding-right: var(--content-padding);
+  padding-left: var(--content-padding);
+  max-width: var(--content-max-width);
   margin-right: auto;
   margin-left: auto;
 }
@@ -139,24 +139,6 @@
   font-size: 16px;
   font-weight: 400;
   text-decoration: underline;
-}
-
-// Access section
-.map {
-  max-width: 1024px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.map iframe {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  border: none;
 }
 
 // Info section

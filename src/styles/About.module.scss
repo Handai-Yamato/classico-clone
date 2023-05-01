@@ -1,0 +1,202 @@
+@import "@/styles/variables.scss";
+
+.sectionContainer {
+  padding-right: var(--content-padding);
+  padding-left: var(--content-padding);
+  max-width: var(--content-max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mainVisual {
+  background: url("/img_about-fv.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainVisual h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 273px;
+  margin-bottom: 0;
+  color: var(--color-white);
+}
+
+.mainVisual h2 span {
+  color: var(--color-white);
+}
+
+.breadCrumbs {
+  margin-top: 2.5rem;
+}
+
+.moreButton {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+// Business section
+.businessContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include mq(md) {
+    flex-direction: row;
+  }
+}
+
+.businessItem {
+  padding: 2rem;
+  box-shadow: var(--box-shadow-primary);
+  background: var(--color-white);
+
+  @include mq(md) {
+    width: calc((100% - 1rem) / 3);
+  }
+}
+
+.businessTitle {
+  font-size: 24px;
+}
+
+.businessText {
+  margin-top: 1rem;
+}
+
+.businessLink {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  color: var(--color-light-blue) !important;
+  text-decoration: underline;
+  text-align: right;
+  transition: all 0.3s ease 0s;
+}
+
+.businessLink:hover {
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+// Company section
+.companySection {
+  background: var(--color-gray);
+}
+
+.companyTable {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: var(--color-white);
+  line-height: 1.6785;
+
+  @include mq(md) {
+    padding: 4rem;
+  }
+}
+
+.companyTable tr {
+  display: flex;
+  flex-direction: column;
+
+  @include mq(md) {
+    flex-direction: row;
+  }
+}
+
+.companyTable th,
+.companyTable td {
+  padding: 1rem;
+  text-align: left;
+
+  @include mq(md) {
+    padding: 2.5rem 2.5rem 2.5rem 1rem;
+  }
+}
+
+.companyTable th {
+  background: var(--color-gray);
+
+  @include mq(md) {
+    width: 35%;
+    text-align: right;
+    border-top: 1px solid rgb(28, 3, 3);
+    background: none;
+  }
+}
+
+.companyTable td {
+  @include mq(md) {
+    width: 100%;
+    border-top: 1px solid rgb(209, 199, 199);
+  }
+}
+
+.companyTable tr:last-child th {
+  @include mq(md) {
+    border-bottom: 1px solid rgb(28, 3, 3);
+  }
+}
+
+.companyTable tr:last-child td {
+  @include mq(md) {
+    border-bottom: 1px solid rgb(209, 199, 199);
+  }
+}
+
+// Works section
+@import "@/styles/variables.scss";
+
+.worksList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  @include mq(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.worksItem {
+  box-shadow: var(--box-shadow-primary);
+  transition: box-shadow 0.3s ease 0s; // 通常状態へ戻る時もトランジションを適用
+  @include mq(md) {
+    width: calc(50% - 1.5rem);
+  }
+}
+
+.worksItem:hover {
+  box-shadow: rgba(28, 3, 3, 0.3) 0px 2px 20px 0px;
+  transition: box-shadow 0.3s ease 0s;
+}
+
+.worksThumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.worksTextContainer {
+  padding: 1rem;
+}
+
+.worksTitle {
+  height: 4rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.worksDescription {
+  height: 3rem;
+  margin-top: 0.5rem;
+}
+
+.worksDate {
+  margin-top: 0.5rem;
+  font-size: 10px;
+}

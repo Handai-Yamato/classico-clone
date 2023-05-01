@@ -17,7 +17,6 @@ export default function NestedLayout({ children, title, pageName }) {
           <meta property="og:title" content={t} />
         </Head>
       )}
-      <BreadCrumbs pageName={pageName} />
       {children}
       <BreadCrumbs pageName={pageName} />
     </div>

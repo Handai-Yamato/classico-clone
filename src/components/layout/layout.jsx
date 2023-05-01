@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 import styles from "@/styles/components/layout/Layout.module.scss";
+import Contact from "../contact";
 
 export default function Layout({ children, router }) {
   return (
@@ -15,7 +16,10 @@ export default function Layout({ children, router }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar path="router.asPath" />
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        {children}
+        <Contact />
+      </main>
       <Footer />
     </>
   );

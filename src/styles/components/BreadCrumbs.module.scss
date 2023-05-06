@@ -1,17 +1,15 @@
 @import "@/styles/variables.scss";
 
-$content-width: 1024px;
-
 .crumbsNav {
   display: flex;
   width: 100%;
-  max-width: $content-width;
+  max-width: var(--content-max-width);
   margin-top: 2.5rem;
   margin-right: auto;
   margin-left: auto;
   gap: 16px;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: var(--content-padding);
+  padding-left: var(--content-padding);
 }
 
 .crumbsItem {

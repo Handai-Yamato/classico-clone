@@ -17,14 +17,19 @@ const BreadCrumbs = ({ pageName }) => {
       <Link href={"/"}>
         <HomeIcon />
       </Link>
-      {paths.map((x, i) => (
-        <React.Fragment key={i}>
-          <span className={styles.crumbsSlash}>{" / "}</span>
-          <Link href={roots[i + 1]} className={styles.crumbsItem}>
-            {i === paths.length - 1 ? <span>{pageName}</span> : getPageName(x)}
-          </Link>
-        </React.Fragment>
-      ))}
+      {paths.map((x, i) => {
+        if (roots[i + 1].startsWith("/works/page")) {
+          return null; // 「works/page/[id].jsx」の場合はパンくずリストに表示しない
+        }
+        return (
+          <React.Fragment key={i}>
+            <span className={styles.crumbsSlash}>{" / "}</span>
+            <Link href={roots[i + 1]} className={styles.crumbsItem}>
+              {i === paths.length - 1 ? <span>{pageName}</span> : getPageName(x)}
+            </Link>
+          </React.Fragment>
+        );
+      })}
     </nav>
   );
 };

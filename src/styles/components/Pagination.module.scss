@@ -1,0 +1,39 @@
+@import "@/styles/variables.scss";
+
+.pagination {
+  text-align: center;
+}
+
+.list {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+  border-radius: 3.5rem;
+  background-color: rgb(238, 238, 238);
+}
+
+.item {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.item + .item {
+  margin-left: 1rem;
+}
+
+.prevButton {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.nextButton {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.currentItem {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}

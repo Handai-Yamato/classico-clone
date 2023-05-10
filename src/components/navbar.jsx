@@ -82,6 +82,9 @@ export default function Navbar() {
           <li className={styles.gnavItem}>
             <Link href="/access">アクセス</Link>
           </li>
+          <li className={styles.gnavItem}>
+            <Link href="/recruit">採用情報</Link>
+          </li>
           <li className={`${styles.gnavItem} ${styles.contactButton}`}>
             <Link href="/contact">お問合せ</Link>
           </li>

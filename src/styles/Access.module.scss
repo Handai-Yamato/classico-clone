@@ -1,0 +1,107 @@
+@import "@/styles/variables.scss";
+
+.sectionContainer {
+  width: 95%;
+  max-width: var(--content-max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mainVisual {
+  background: url("/img_recruit-fv.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainVisual h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  margin-bottom: 0;
+  color: var(--color-white);
+}
+
+.mainVisual h2 span {
+  color: var(--color-white);
+}
+
+// Guidelines section
+.guidelines {
+  background: var(--color-white);
+  box-shadow: var(--box-shadow-primary);
+}
+
+.table {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: var(--color-white);
+  line-height: 1.6785;
+
+  @include mq(md) {
+    padding: 4rem;
+  }
+}
+
+.table tr {
+  display: flex;
+  flex-direction: column;
+
+  @include mq(md) {
+    flex-direction: row;
+  }
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+
+  @include mq(md) {
+    padding: 2.5rem 2.5rem 2.5rem 1rem;
+  }
+}
+
+.table th {
+  background: var(--color-gray);
+
+  @include mq(md) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40%;
+    text-align: right;
+    border-top: 1px solid rgb(28, 3, 3);
+    background: none;
+  }
+}
+
+.table td {
+  @include mq(md) {
+    width: 100%;
+    border-top: 1px solid rgb(209, 199, 199);
+  }
+}
+
+.table tr:last-child th {
+  @include mq(md) {
+    border-bottom: 1px solid rgb(28, 3, 3);
+  }
+}
+
+.table tr:last-child td {
+  @include mq(md) {
+    border-bottom: 1px solid rgb(209, 199, 199);
+  }
+}
+
+.button {
+  margin-top: 3rem;
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: 5rem;
+  }
+}

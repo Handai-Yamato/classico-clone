@@ -2,34 +2,18 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 // library
-import { client } from "../../lib/client";
+import { client } from "/lib/client";
 // component
 import NestedLayout from "@/components/layout/nested-layout";
 import Pagination from "@/components/pagination";
 // styles
 import styles from "@/styles/Works.module.scss";
 
-// SSG
-export const getStaticProps = async () => {
-  const worksData = await client.get({ endpoint: "works", queries: { offset: 0, limit: 9 } });
+const PER_PAGE = 9;
 
-  return {
-    props: {
-      works: worksData.contents,
-      totalCount: worksData.totalCount,
-    },
-  };
-};
-
-const Works = ({ works, totalCount }) => {
+export default function BlogPageId({ works, totalCount }) {
   return (
     <NestedLayout title="施工事例" pageName="施工事例">
-      <div className={styles.mainVisual}>
-        <h2 className={styles.pageTitle}>
-          Works<span>施工事例</span>
-        </h2>
-      </div>
-
       <section>
         <div className={styles.sectionContainer}>
           <ul className={styles.worksList}>
@@ -66,11 +50,36 @@ const Works = ({ works, totalCount }) => {
             ))}
           </ul>
         </div>
-      </section>
 
-      <Pagination totalCount={totalCount} />
+        <Pagination totalCount={totalCount} />
+      </section>
     </NestedLayout>
   );
+}
+
+// 動的なページを作成
+export const getStaticPaths = async () => {
+  const repos = await client.get({ endpoint: "works" });
+
+  const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
+
+  const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map(
+    (repo) => `/works/page/${repo}`
+  );
+
+  return { paths, fallback: false };
 };
 
-export default Works;
+// データを取得
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
+
+  const data = await client.get({ endpoint: "works", queries: { offset: (id - 1) * 9, limit: 9 } });
+
+  return {
+    props: {
+      works: data.contents,
+      totalCount: data.totalCount,
+    },
+  };
+};

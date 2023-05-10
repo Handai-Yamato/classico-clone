@@ -1,10 +1,10 @@
 import React from "react";
 // component
-import BreadCrumbs from "@/components/breadCrumbs";
-// styles
-import styles from "@/styles/Access.module.scss";
-import NestedLayout from "@/components/layout/nested-layout";
 import { PrimaryButtonLarge } from "@/components/button";
+import BreadCrumbs from "@/components/breadCrumbs";
+import NestedLayout from "@/components/layout/nested-layout";
+// styles
+import styles from "@/styles/Recruit.module.scss";
 
 const Recruit = () => {
   return (
@@ -82,11 +82,10 @@ const Recruit = () => {
                   </td>
                 </tr>
               </tbody>
-
-              <div className={styles.button}>
-                <PrimaryButtonLarge href="tel: 048-961-8036" text="まずはお電話ください" />
-              </div>
             </table>
+            <div className={styles.button}>
+              <PrimaryButtonLarge href="tel: 048-961-8036" text="まずはお電話ください" />
+            </div>
           </div>
         </div>
       </section>

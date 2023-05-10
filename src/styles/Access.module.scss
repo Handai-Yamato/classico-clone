@@ -1,0 +1,54 @@
+@import "@/styles/variables.scss";
+
+.sectionContainer {
+  width: 95%;
+  max-width: var(--content-max-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 4rem 2rem;
+  background: var(--color-white);
+  box-shadow: var(--box-shadow-primary);
+
+  @include mq(md) {
+    padding: 4rem;
+  }
+}
+
+.mainVisual {
+  background: url("/img_access-fv.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainVisual h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  margin-bottom: 0;
+  color: var(--color-white);
+}
+
+.mainVisual h2 span {
+  color: var(--color-white);
+}
+
+.title {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.list {
+  margin-top: 2.5rem;
+}
+
+.item {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.item + .item {
+  margin-top: 3.5rem;
+}

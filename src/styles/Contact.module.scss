@@ -1,0 +1,29 @@
+@import "@/styles/variables.scss";
+
+.sectionContainer {
+  width: 95%;
+  max-width: var(--content-max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mainVisual {
+  background: url("/img_recruit-fv.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainVisual h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  margin-bottom: 0;
+  color: var(--color-white);
+}
+
+.mainVisual h2 span {
+  color: var(--color-white);
+}

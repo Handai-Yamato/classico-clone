@@ -27,7 +27,7 @@ export default function sendGmail(req, res) {
     `,
   };
 
-  // お問い合わせ者にも確認のメールを送信する
+  // お問い合わせをした方にも確認のメールを送信する
   const toUserMailData = {
     from: "y.handai1272@gmail.com",
     to: req.body.email,

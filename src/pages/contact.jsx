@@ -27,6 +27,14 @@ export default function Contact() {
       },
       body: JSON.stringify(data),
     });
+
+    if (res.status === 200) {
+      // 送信完了後に遷移するページへのURL
+      const thanksPageUrl = "/thanks";
+
+      // リダイレクト
+      window.location.href = thanksPageUrl;
+    }
   };
 
   return (

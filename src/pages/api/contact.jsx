@@ -20,10 +20,14 @@ export default function sendGmail(req, res) {
     html: `
         <p>【名前】</p>
         <p>${req.body.name}</p>
+        <p>【ふりがな】</p>
+        <p>${req.body.kana}</p>
+        <p>【電話番号】</p>
+        <p>${req.body.tel}</p>
+        <p>【Eメールアドレス】</p>
+        <p>${req.body.email}</p>
         <p>【お問い合せ内容】</p>
         <p>${req.body.message}</p>
-        <p>【メールアドレス】</p>
-        <p>${req.body.email}</p>
     `,
   };
 

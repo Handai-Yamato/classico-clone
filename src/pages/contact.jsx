@@ -57,55 +57,57 @@ export default function Contact() {
             <br></br>
             その際も下記のお電話にてご連絡をお願いします
           </p>
-          <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <label>お名前</label>
-              </div>
 
-              <div className={styles.data}>
-                <input className={styles.input} type="text" ref={nameRef} id="name" required />
-              </div>
-            </div>
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <table className={styles.table}>
+              <tbody>
+                <tr>
+                  <th>お名前</th>
+                  <td>
+                    <input className={styles.input} type="text" ref={nameRef} id="name" required />
+                  </td>
+                </tr>
+                <tr>
+                  <th>ふりがな</th>
+                  <td>
+                    <input
+                      className={styles.input}
+                      type="text"
+                      ref={kanaRef}
+                      id="hurigana"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>電話番号</th>
+                  <td>
+                    <input className={styles.input} type="tel" ref={telRef} id="tel" required />
+                  </td>
+                </tr>
+                <tr>
+                  <th>Eメールアドレス</th>
+                  <td>
+                    <input
+                      className={styles.input}
+                      type="email"
+                      ref={emailRef}
+                      id="email"
+                      required
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <label>ふりがな</label>
-              </div>
-
-              <div className={styles.data}>
-                <input className={styles.input} type="text" ref={kanaRef} id="hurigana" required />
-              </div>
-            </div>
-
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <labe>電話番号</labe>
-              </div>
-
-              <div className={styles.data}>
-                <input className={styles.input} type="tel" ref={telRef} id="tel" required />
-              </div>
-            </div>
-
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <label>Eメールアドレス</label>
-              </div>
-
-              <div className={styles.data}>
-                <input className={styles.input} type="email" ref={emailRef} id="email" required />
-              </div>
-            </div>
-
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <label>お問い合わせ内容</label>
-              </div>
-
-              <div className={styles.data}>
-                <textarea className={styles.input} ref={messageRef} id="message" required />
-              </div>
+            <div className={styles.button}>
+              <button
+                className={`${buttonStyles.button} ${buttonStyles.primaryButtonSmall}`}
+                type="submit"
+                required
+              >
+                送信する
+              </button>
             </div>
           </form>
 
@@ -117,18 +119,8 @@ export default function Contact() {
 
             <div className={styles.checkbox}>
               <input name="check" id="check" type="checkbox" />
-              <label for="check">上記プライバシーポリシーに同意する</label>
+              <label>上記プライバシーポリシーに同意する</label>
             </div>
-          </div>
-
-          <div className={styles.button}>
-            <button
-              className={`${buttonStyles.button} ${buttonStyles.primaryButtonSmall}`}
-              type="submit"
-              required
-            >
-              送信する
-            </button>
           </div>
         </div>
       </section>

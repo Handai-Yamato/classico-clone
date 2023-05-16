@@ -8,6 +8,7 @@ import NestedLayout from "@/components/layout/nested-layout";
 import Pagination from "@/components/pagination";
 // styles
 import styles from "@/styles/Works.module.scss";
+import BreadCrumbs from "@/components/breadCrumbs";
 
 // SSG
 export const getStaticProps = async () => {
@@ -29,6 +30,8 @@ const Works = ({ works, totalCount }) => {
           Works<span>施工事例</span>
         </h2>
       </div>
+
+      <BreadCrumbs pageName="施工事例" />
 
       <section>
         <div className={styles.sectionContainer}>

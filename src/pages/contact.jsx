@@ -5,6 +5,7 @@ import NestedLayout from "@/components/layout/nested-layout";
 import styles from "@/styles/Contact.module.scss";
 import buttonStyles from "@/styles/components/Button.module.scss";
 import Link from "next/link";
+import BreadCrumbs from "@/components/breadCrumbs";
 
 export default function Contact() {
   const nameRef = useRef(null);
@@ -50,6 +51,7 @@ export default function Contact() {
 
   return (
     <NestedLayout title="お問い合わせ" pageName="お問い合わせ">
+      <BreadCrumbs pageName="お問い合わせ" />
       <section>
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>メールフォームでのお問い合わせ</h2>

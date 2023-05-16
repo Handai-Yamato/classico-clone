@@ -3,7 +3,7 @@ import { client } from "../../../lib/client";
 import HomeIcon from "@/components/svg/homeIcon.jsx";
 import NestedLayout from "@/components/layout/nested-layout";
 // styles
-import styles from "@/styles/blog/Id.module.scss";
+import styles from "@/styles/blog/Blog.module.scss";
 
 // 事前に生成するためのパスを指定
 export const getStaticPaths = async () => {

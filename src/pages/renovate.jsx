@@ -1,8 +1,10 @@
-import NestedLayout from "@/components/layout/nested-layout";
 import React from "react";
+import Image from "next/image";
+// component
+import NestedLayout from "@/components/layout/nested-layout";
+import BreadCrumbs from "@/components/breadCrumbs";
 // styles
 import styles from "@/styles/Renovate.module.scss";
-import Image from "next/image";
 
 const renovate = () => {
   return (
@@ -12,6 +14,8 @@ const renovate = () => {
           Renovate<span>リノベーション</span>
         </h2>
       </div>
+
+      <BreadCrumbs pageName="リノベーション" />
 
       <section>
         <div className={styles.sectionContainer}>

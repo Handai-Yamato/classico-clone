@@ -2,14 +2,12 @@
 
 .crumbsNav {
   display: flex;
-  width: 100%;
+  width: var(--content-width);
   max-width: var(--content-max-width);
   margin-top: 2.5rem;
   margin-right: auto;
   margin-left: auto;
   gap: 16px;
-  padding-right: var(--content-padding);
-  padding-left: var(--content-padding);
 }
 
 .crumbsItem {

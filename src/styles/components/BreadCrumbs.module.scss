@@ -2,7 +2,7 @@
 
 .crumbsNav {
   display: flex;
-  width: 100%;
+  width: var(--content-width);
   max-width: var(--content-max-width);
   margin-top: 2.5rem;
   margin-right: auto;

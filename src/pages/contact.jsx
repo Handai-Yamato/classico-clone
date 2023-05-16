@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 // component
 import NestedLayout from "@/components/layout/nested-layout";
 // styles
@@ -13,9 +13,10 @@ export default function Contact() {
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
+  const [message, setMessage] = useState("");
+  const [checked, setChecked] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(nameRef.current?.value);
 
     let data = {
       name: nameRef.current?.value,
@@ -40,6 +41,10 @@ export default function Contact() {
 
       // リダイレクト
       window.location.href = thanksPageUrl;
+    } else {
+      if (!checked) {
+        setMessage("Please check the checkbox to agree to the terms and conditions.");
+      }
     }
   };
 
@@ -57,79 +62,71 @@ export default function Contact() {
             <br></br>
             その際も下記のお電話にてご連絡をお願いします
           </p>
-          <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <label>お名前</label>
-              </div>
 
-              <div className={styles.data}>
-                <input className={styles.input} type="text" ref={nameRef} id="name" required />
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <table className={styles.table}>
+              <tbody>
+                <tr>
+                  <th>お名前</th>
+                  <td>
+                    <input className={styles.input} type="text" ref={nameRef} id="name" required />
+                    <span></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th>ふりがな</th>
+                  <td>
+                    <input
+                      className={styles.input}
+                      type="text"
+                      ref={kanaRef}
+                      id="hurigana"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>電話番号</th>
+                  <td>
+                    <input className={styles.input} type="tel" ref={telRef} id="tel" required />
+                  </td>
+                </tr>
+                <tr>
+                  <th>Eメールアドレス</th>
+                  <td>
+                    <input
+                      className={styles.input}
+                      type="email"
+                      ref={emailRef}
+                      id="email"
+                      required
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div className={styles.privacyPolicy}>
+              <p>
+                当社の<Link href="/privacy-policy">プライバシポリシー</Link>
+                について同意される⽅のみ送信できます。
+              </p>
+
+              <div className={styles.checkbox}>
+                <input name="check" id="check" type="checkbox" required />
+                <label htmlFor="check">上記プライバシーポリシーに同意する</label>
               </div>
             </div>
 
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <label>ふりがな</label>
-              </div>
-
-              <div className={styles.data}>
-                <input className={styles.input} type="text" ref={kanaRef} id="hurigana" required />
-              </div>
-            </div>
-
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <labe>電話番号</labe>
-              </div>
-
-              <div className={styles.data}>
-                <input className={styles.input} type="tel" ref={telRef} id="tel" required />
-              </div>
-            </div>
-
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <label>Eメールアドレス</label>
-              </div>
-
-              <div className={styles.data}>
-                <input className={styles.input} type="email" ref={emailRef} id="email" required />
-              </div>
-            </div>
-
-            <div className={styles.container}>
-              <div className={styles.label}>
-                <label>お問い合わせ内容</label>
-              </div>
-
-              <div className={styles.data}>
-                <textarea className={styles.input} ref={messageRef} id="message" required />
-              </div>
+            <div className={styles.button}>
+              <button
+                className={`${buttonStyles.button} ${buttonStyles.primaryButtonSmall}`}
+                type="submit"
+              >
+                送信する
+              </button>
             </div>
           </form>
-
-          <div className={styles.privacyPolicy}>
-            <p>
-              当社の<Link href="/privacy-policy">プライバシポリシー</Link>
-              について同意される⽅のみ送信できます。
-            </p>
-
-            <div className={styles.checkbox}>
-              <input name="check" id="check" type="checkbox" />
-              <label for="check">上記プライバシーポリシーに同意する</label>
-            </div>
-          </div>
-
-          <div className={styles.button}>
-            <button
-              className={`${buttonStyles.button} ${buttonStyles.primaryButtonSmall}`}
-              type="submit"
-              required
-            >
-              送信する
-            </button>
-          </div>
         </div>
       </section>
     </NestedLayout>

@@ -43,15 +43,21 @@
 }
 
 // Form style
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+.input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 2rem;
 }
 
-.container {
+.table {
+  width: 100%;
+  padding-top: 4rem;
+  background: var(--color-white);
+  line-height: 1.6785;
+}
+
+.table tr {
   display: flex;
   flex-direction: column;
 
@@ -60,8 +66,8 @@
   }
 }
 
-.label,
-.data {
+.table th,
+.table td {
   padding: 1rem;
   text-align: left;
 
@@ -70,13 +76,10 @@
   }
 }
 
-.label {
+.table th {
   background: var(--color-gray);
 
   @include mq(md) {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
     width: 35%;
     text-align: right;
     border-top: 1px solid rgb(28, 3, 3);
@@ -84,32 +87,20 @@
   }
 }
 
-.data {
+.table td {
   @include mq(md) {
     width: 100%;
-    padding: 2.5rem;
     border-top: 1px solid rgb(209, 199, 199);
   }
 }
 
-.data textarea {
-  min-height: 160px;
-}
-
-.input {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  border: 1px solid rgb(219, 219, 219);
-  border-radius: 2rem;
-}
-
-.container:last-child .label {
+.table tr:last-child th {
   @include mq(md) {
     border-bottom: 1px solid rgb(28, 3, 3);
   }
 }
 
-.container:last-child .data {
+.table tr:last-child td {
   @include mq(md) {
     border-bottom: 1px solid rgb(209, 199, 199);
   }
@@ -133,6 +124,28 @@
 }
 
 .button {
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   text-align: center;
+}
+
+.input:required {
+  position: relative;
+  border-color: rgb(227, 73, 89);
+  background: rgb(255, 233, 235);
+}
+
+.input:required + span::after {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 240px;
+  content: " ＊必須 ";
+  color: #f00;
+}
+
+.input:valid {
+  border-color: rgb(209, 199, 199);
+  background-color: initial;
 }

@@ -1,0 +1,60 @@
+@import "@/styles/variables.scss";
+
+$content-width: 1024px;
+
+.container {
+  width: 100%;
+  max-width: $content-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+// microCMSコンテンツのスタイル
+.blogContainer {
+  width: 100%;
+  max-width: $content-width;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: rgba(28, 3, 3, 0.13) 0px 2px 12px 0px;
+
+  @include mq(md) {
+    padding: 4rem;
+  }
+}
+
+.date {
+  width: 72px;
+  padding: 4px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.4rem;
+  border-radius: 4px;
+  color: var(--color-white);
+  background: var(--color-dark-blue);
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: 24px;
+
+  @include mq(md) {
+    font-size: 32px;
+  }
+}
+
+.body {
+  margin-top: 1.5rem;
+  font-size: 14px;
+  color: var(--color-light-black);
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+.images {
+  margin-top: 1.5rem;
+}

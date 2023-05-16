@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 // component
 import NestedLayout from "@/components/layout/nested-layout";
 // styles
@@ -13,9 +13,10 @@ export default function Contact() {
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
+  const [message, setMessage] = useState("");
+  const [checked, setChecked] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(nameRef.current?.value);
 
     let data = {
       name: nameRef.current?.value,
@@ -40,6 +41,10 @@ export default function Contact() {
 
       // リダイレクト
       window.location.href = thanksPageUrl;
+    } else {
+      if (!checked) {
+        setMessage("Please check the checkbox to agree to the terms and conditions.");
+      }
     }
   };
 
@@ -65,6 +70,7 @@ export default function Contact() {
                   <th>お名前</th>
                   <td>
                     <input className={styles.input} type="text" ref={nameRef} id="name" required />
+                    <span></span>
                   </td>
                 </tr>
                 <tr>
@@ -100,28 +106,27 @@ export default function Contact() {
               </tbody>
             </table>
 
+            <div className={styles.privacyPolicy}>
+              <p>
+                当社の<Link href="/privacy-policy">プライバシポリシー</Link>
+                について同意される⽅のみ送信できます。
+              </p>
+
+              <div className={styles.checkbox}>
+                <input name="check" id="check" type="checkbox" required />
+                <label htmlFor="check">上記プライバシーポリシーに同意する</label>
+              </div>
+            </div>
+
             <div className={styles.button}>
               <button
                 className={`${buttonStyles.button} ${buttonStyles.primaryButtonSmall}`}
                 type="submit"
-                required
               >
                 送信する
               </button>
             </div>
           </form>
-
-          <div className={styles.privacyPolicy}>
-            <p>
-              当社の<Link href="/privacy-policy">プライバシポリシー</Link>
-              について同意される⽅のみ送信できます。
-            </p>
-
-            <div className={styles.checkbox}>
-              <input name="check" id="check" type="checkbox" />
-              <label>上記プライバシーポリシーに同意する</label>
-            </div>
-          </div>
         </div>
       </section>
     </NestedLayout>
